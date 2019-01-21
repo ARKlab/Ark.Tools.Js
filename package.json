@@ -38,7 +38,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir dist  --extensions \".ts,.tsx,.js\"",
-    "build-esm": "babel src --out-dir _esm --extensions \".ts,.tsx\"",
+    "build-esm": "babel src --out-dir _esm --extensions \".ts,.tsx,.js\"",
     "type-check": "tsc",
     "version": "npm run build && npm run build-esm && git add -f dist _esm"
   },
