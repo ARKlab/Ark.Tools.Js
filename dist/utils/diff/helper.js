@@ -1,13 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.downloadExcel = void 0;
-
-var _json2xls = _interopRequireDefault(require("json2xls"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import json2xls from "json2xls";
 
 var s2ab = function s2ab(s) {
   var buf = new ArrayBuffer(s.length);
@@ -20,10 +11,10 @@ var s2ab = function s2ab(s) {
   return buf;
 };
 
-var downloadExcel = function downloadExcel(_ref) {
+export var downloadExcel = function downloadExcel(_ref) {
   var data = _ref.data,
       fileName = _ref.fileName;
-  var json2xlsData = (0, _json2xls.default)(data);
+  var json2xlsData = json2xls(data);
   var csv = btoa(json2xlsData);
   var blob = new Blob([s2ab(atob(csv))], {
     type: ""
@@ -42,5 +33,3 @@ var downloadExcel = function downloadExcel(_ref) {
 
   return true;
 };
-
-exports.downloadExcel = downloadExcel;

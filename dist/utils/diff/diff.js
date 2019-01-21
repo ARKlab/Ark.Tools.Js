@@ -1,15 +1,6 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.diff = void 0;
-
-var R = _interopRequireWildcard(require("ramda"));
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+import * as R from "ramda";
 
 var checkValue = function checkValue(_ref) {
   var key = _ref.key,
@@ -93,7 +84,7 @@ var getColKeys = function getColKeys(list, primaryKeys) {
   }), R.keys)(list);
 };
 
-var diff = function diff(_ref9) {
+export var diff = function diff(_ref9) {
   var prev = _ref9.prev,
       current = _ref9.current,
       primaryKeys = _ref9.primaryKeys,
@@ -136,7 +127,4 @@ var diff = function diff(_ref9) {
     modified: modified
   }) : R.concat(modified, addRemoveArray);
 };
-
-exports.diff = diff;
-var _default = diff;
-exports.default = _default;
+export default diff;

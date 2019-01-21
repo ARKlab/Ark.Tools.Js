@@ -3,7 +3,7 @@ import "./modal.scss";
 
 const ConfigModal = ({
   open,
-  id,
+  id="arkModal",
   title,
   modalClass,
   headerClass,

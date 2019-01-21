@@ -1,19 +1,10 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-require("./modal.scss");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import React from "react";
+import "./modal.scss";
 
 var ConfigModal = function ConfigModal(_ref) {
   var open = _ref.open,
-      id = _ref.id,
+      _ref$id = _ref.id,
+      id = _ref$id === void 0 ? "arkModal" : _ref$id,
       title = _ref.title,
       modalClass = _ref.modalClass,
       headerClass = _ref.headerClass,
@@ -36,5 +27,4 @@ var ConfigModal = function ConfigModal(_ref) {
   </div>;
 };
 
-var _default = ConfigModal;
-exports.default = _default;
+export default ConfigModal;

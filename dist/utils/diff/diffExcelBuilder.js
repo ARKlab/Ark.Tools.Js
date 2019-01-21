@@ -1,15 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.excelBuilder = void 0;
-
-var R = _interopRequireWildcard(require("ramda"));
-
-var _helper = require("./helper");
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+import * as R from "ramda";
+import { downloadExcel } from "./helper";
 
 var createExcelRow = function createExcelRow(_ref) {
   var previous = _ref.previous,
@@ -49,13 +39,13 @@ var mapData = function mapData(_ref2) {
   });
 };
 
-var excelBuilder = function excelBuilder(_ref3) {
+export var excelBuilder = function excelBuilder(_ref3) {
   var prev = _ref3.prev,
       curr = _ref3.curr,
       list = _ref3.list,
       fileName = _ref3.fileName;
   return R.pipe(mapData, function (data) {
-    return (0, _helper.downloadExcel)({
+    return downloadExcel({
       data: data,
       fileName: fileName
     });
@@ -65,7 +55,4 @@ var excelBuilder = function excelBuilder(_ref3) {
     list: list
   });
 };
-
-exports.excelBuilder = excelBuilder;
-var _default = excelBuilder;
-exports.default = _default;
+export default excelBuilder;

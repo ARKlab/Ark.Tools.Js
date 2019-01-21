@@ -1,15 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-require("./modal.scss");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import React from "react";
+import "./modal.scss";
 
 var ConfigModal = function ConfigModal(_ref) {
   var open = _ref.open,
@@ -47,5 +37,4 @@ var ConfigModal = function ConfigModal(_ref) {
   </div>;
 };
 
-var _default = ConfigModal;
-exports.default = _default;
+export default ConfigModal;

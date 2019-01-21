@@ -3,7 +3,7 @@ import "./loader.scss";
 
 const Loader = ({
   load,
-  id,
+  id="arkLoader",
   loadIcon
 }: {
   load: boolean;
