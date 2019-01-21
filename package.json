@@ -1,6 +1,6 @@
 {
   "name": "ark_ui_tools",
-  "version": "0.1.8",
+  "version": "0.1.6",
   "description": "",
   "keywords": [],
   "author": "",
@@ -38,7 +38,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir dist  --extensions \".ts,.tsx,.js\"",
-    "build-esm": "babel src --out-dir _esm --extensions \".ts,.tsx,.js\"",
+    "build-esm": "babel src --out-dir _esm --extensions \".ts,.tsx\"",
     "type-check": "tsc",
     "version": "npm run build && npm run build-esm && git add -f dist _esm"
   },
