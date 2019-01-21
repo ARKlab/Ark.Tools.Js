@@ -1,0 +1,20 @@
+import React from "react";
+import "./loader.scss";
+
+const Loader = ({
+  load,
+  id,
+  loadIcon
+}: {
+  load: boolean;
+  id: string;
+  loadIcon: string;
+}) => (
+  <div className={`loadOverlay ${load ? "spin" : ""}`} id={id}>
+    <div className="loadContainer">
+      <i className={loadIcon} />
+    </div>
+  </div>
+);
+
+export default Loader;
