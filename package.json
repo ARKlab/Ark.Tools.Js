@@ -1,12 +1,12 @@
 {
   "name": "ark_ui_tools",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "main": "dist/index.ts",
-  "module": "_esm/index.ts",
+  "main": "dist/index.js",
+  "module": "_esm/index.js",
   "dependencies": {
     "@types/jest": "23.3.12",
     "@types/node": "10.12.18",
@@ -37,9 +37,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src --out-dir dist --extensions \".ts,.tsx\"",
+    "build": "babel src --out-dir dist  --extensions \".ts,.tsx,.js\"",
+    "build-esm": "babel src --out-dir _esm --extensions \".ts,.tsx,.js\"",
     "type-check": "tsc",
-    "version": "npm run build && git add -f dist"
+    "version": "npm run build && npm run build-esm && git add -f dist _esm"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

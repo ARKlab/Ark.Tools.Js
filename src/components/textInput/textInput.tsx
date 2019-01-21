@@ -53,10 +53,10 @@ const NumericInput = ({
   placeholder = ""
 }: OutputProps) => (
   <div>
-    {labelName && !requiredFieldText ? (
+    {!R.isEmpty(labelName) && R.isEmpty(requiredFieldText) ? (
       <OnlyLabelName labelName={labelName} />
     ) : null}
-    {labelName && requiredFieldText ? (
+    {!R.isEmpty(labelName) && !R.isEmpty(requiredFieldText) ? (
       <RequiredLabelName
         labelName={labelName}
         requiredFieldText={requiredFieldText}

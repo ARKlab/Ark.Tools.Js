@@ -1,4 +1,5 @@
 import React from "react";
+import * as R from "ramda";
 import "./textArea.scss";
 
 const OnlyLabelName = ({ labelName }: { labelName?: string }) => (
@@ -41,20 +42,20 @@ const TextBoxInput = ({
   value,
   areaClassName = "",
   id = "arkTextArea",
-  labelName,
+  labelName = "",
   readOnly = false,
   disabled = false,
   autoComplete = "on",
   minLength = 1,
   maxLength = 5000,
-  requiredFieldText,
+  requiredFieldText = "",
   placeholder = ""
 }: InputProps) => (
   <div>
-    {labelName && !requiredFieldText ? (
+    {!R.isEmpty(labelName) && R.isEmpty(requiredFieldText) ? (
       <OnlyLabelName labelName={labelName} />
     ) : null}
-    {labelName && requiredFieldText ? (
+    {!R.isEmpty(labelName) && !R.isEmpty(requiredFieldText) ? (
       <RequiredLabelName
         labelName={labelName}
         requiredFieldText={requiredFieldText}
