@@ -1,21 +1,7 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var R = _interopRequireWildcard(require("ramda"));
-
-var _recompose = require("recompose");
-
-require("./numericInput.scss");
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import React from "react";
+import * as R from "ramda";
+import { compose, withHandlers } from "recompose";
+import "./numericInput.scss";
 
 var OnlyLabelName = function OnlyLabelName(_ref) {
   var labelName = _ref.labelName;
@@ -65,7 +51,7 @@ var NumericInput = function NumericInput(_ref3) {
   </div>;
 };
 
-var _default = (0, _recompose.compose)((0, _recompose.withHandlers)({
+export default compose(withHandlers({
   change: function change(_ref4) {
     var update = _ref4.update,
         max = _ref4.max,
@@ -84,5 +70,3 @@ var _default = (0, _recompose.compose)((0, _recompose.withHandlers)({
     };
   }
 }))(NumericInput);
-
-exports.default = _default;

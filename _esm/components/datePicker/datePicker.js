@@ -1,23 +1,9 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-require("react-dates/initialize");
-
-var _recompose = require("recompose");
-
-var _reactDates = require("react-dates");
-
-require("react-dates/lib/css/_datepicker.css");
-
-require("./datePicker.scss");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import React from "react";
+import "react-dates/initialize";
+import { compose, withHandlers, withState } from "recompose";
+import { SingleDatePicker } from "react-dates";
+import "react-dates/lib/css/_datepicker.css";
+import "./datePicker.scss";
 
 var DatePicker = function DatePicker(_ref) {
   var value = _ref.value,
@@ -37,10 +23,10 @@ var DatePicker = function DatePicker(_ref) {
       withPortal = _ref$withPortal === void 0 ? false : _ref$withPortal,
       _ref$numberOfMonths = _ref.numberOfMonths,
       numberOfMonths = _ref$numberOfMonths === void 0 ? 1 : _ref$numberOfMonths;
-  return <_reactDates.SingleDatePicker id={id} date={value} focused={focusedInput} onDateChange={changeData} onFocusChange={setFocusedInput} showClearDate small disabled={disabled} readOnly={readOnly} hideKeyboardShortcutsPanel displayFormat={format} numberOfMonths={numberOfMonths} withPortal={withPortal} placeholder={placeHolder} />;
+  return <SingleDatePicker id={id} date={value} focused={focusedInput} onDateChange={changeData} onFocusChange={setFocusedInput} showClearDate small disabled={disabled} readOnly={readOnly} hideKeyboardShortcutsPanel displayFormat={format} numberOfMonths={numberOfMonths} withPortal={withPortal} placeholder={placeHolder} />;
 };
 
-var _default = (0, _recompose.compose)((0, _recompose.withState)("focusedInput", "updateFocusedInput", false), (0, _recompose.withHandlers)({
+export default compose(withState("focusedInput", "updateFocusedInput", false), withHandlers({
   changeData: function changeData(_ref2) {
     var setDate = _ref2.setDate;
     return function (val) {
@@ -54,5 +40,3 @@ var _default = (0, _recompose.compose)((0, _recompose.withState)("focusedInput",
     };
   }
 }))(DatePicker);
-
-exports.default = _default;

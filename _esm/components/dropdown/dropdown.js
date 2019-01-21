@@ -1,24 +1,8 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _reactSelect = _interopRequireWildcard(require("react-select"));
-
-var R = _interopRequireWildcard(require("ramda"));
-
-var _reactCustomScrollbars = _interopRequireDefault(require("react-custom-scrollbars"));
-
-require("./dropdown.scss");
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+import React from "react";
+import Select, { components } from "react-select";
+import * as R from "ramda";
+import Scrollbars from "react-custom-scrollbars";
+import "./dropdown.scss";
 var sortByNameCaseInsensitive = R.sortBy(R.compose(R.toLower, R.prop("value")));
 
 var sortOptionsFunc = function sortOptionsFunc(_ref) {
@@ -28,7 +12,7 @@ var sortOptionsFunc = function sortOptionsFunc(_ref) {
 };
 
 var ScrollbarsMenu = function ScrollbarsMenu(props) {
-  return <_reactCustomScrollbars.default autoHeight universal={true} renderTrackHorizontal={function (p) {
+  return <Scrollbars autoHeight universal={true} renderTrackHorizontal={function (p) {
     return <div {...p} style={{
       display: "none"
     }} className="track-horizontal" />;
@@ -38,13 +22,13 @@ var ScrollbarsMenu = function ScrollbarsMenu(props) {
     return <div {...vals} className="thumb-vertical" />;
   }}>
     {props.children}
-  </_reactCustomScrollbars.default>;
+  </Scrollbars>;
 };
 
 var Menu = function Menu(props) {
-  return <_reactSelect.components.Menu {...props}>
+  return <components.Menu {...props}>
       {props.menuShouldScrollIntoView ? <ScrollbarsMenu {...props} /> : <div className="arkSelectBody">{props.children}</div>}
-    </_reactSelect.components.Menu>;
+    </components.Menu>;
 };
 
 var Dropdown = function Dropdown(_ref2) {
@@ -75,7 +59,7 @@ var Dropdown = function Dropdown(_ref2) {
     {labelName ? <label htmlFor="select">
         <b>{labelName}</b>
       </label> : null}
-    <_reactSelect.default isMulti={isMulti} className="arkSelect" classNamePrefix="arkSelect" name={selectName} value={value} onChange={update} options={sortOptionsFunc({
+    <Select isMulti={isMulti} className="arkSelect" classNamePrefix="arkSelect" name={selectName} value={value} onChange={update} options={sortOptionsFunc({
       options: options,
       sortOptions: sortOptions
     })} isDisabled={isDisabled} isSearchable={isSearchable} isClearable={isClearable} menuShouldScrollIntoView={customScrollBars} closeMenuOnSelect={closeMenuOnSelect} noOptionsMessage={function () {
@@ -86,5 +70,4 @@ var Dropdown = function Dropdown(_ref2) {
   </>;
 };
 
-var _default = Dropdown;
-exports.default = _default;
+export default Dropdown;

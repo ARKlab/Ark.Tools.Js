@@ -1,25 +1,10 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-require("react-dates/initialize");
-
-var _recompose = require("recompose");
-
-var _moment = _interopRequireDefault(require("moment"));
-
-var _reactDates = require("react-dates");
-
-require("react-dates/lib/css/_datepicker.css");
-
-require("./dateRange.scss");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import React from "react";
+import "react-dates/initialize";
+import { compose, withHandlers, withState } from "recompose";
+import moment from "moment";
+import { DateRangePicker } from "react-dates";
+import "react-dates/lib/css/_datepicker.css";
+import "./dateRange.scss";
 
 var DatePicker = function DatePicker(_ref) {
   var start = _ref.start,
@@ -34,7 +19,7 @@ var DatePicker = function DatePicker(_ref) {
       endPlaceHolder = _ref$endPlaceHolder === void 0 ? "To Date" : _ref$endPlaceHolder,
       _ref$id = _ref.id,
       id = _ref$id === void 0 ? "datePicker" : _ref$id;
-  return <_reactDates.DateRangePicker startDate={start} startDatePlaceholderText={startPlaceHolder} startDateId={"".concat(id, "_fromDate")} endDate={end} endDatePlaceholderText={endPlaceHolder} endDateId={"".concat(id, "_toDate")} onDatesChange={updateRange} focusedInput={focusedInput} onFocusChange={setFocusedInput} showClearDates small isOutsideRange={function () {
+  return <DateRangePicker startDate={start} startDatePlaceholderText={startPlaceHolder} startDateId={"".concat(id, "_fromDate")} endDate={end} endDatePlaceholderText={endPlaceHolder} endDateId={"".concat(id, "_toDate")} onDatesChange={updateRange} focusedInput={focusedInput} onFocusChange={setFocusedInput} showClearDates small isOutsideRange={function () {
     return false;
   }} hideKeyboardShortcutsPanel displayFormat={format} />;
 };
@@ -51,8 +36,8 @@ var setRange = function setRange(_ref2) {
 
   if (startDate !== null && endDate !== null) {
     setDate({
-      startDate: (0, _moment.default)(startDate).format(format),
-      endDate: (0, _moment.default)(endDate).format(format)
+      startDate: moment(startDate).format(format),
+      endDate: moment(endDate).format(format)
     });
   } else if (startDate === null && endDate === null) {
     setDate({
@@ -62,7 +47,7 @@ var setRange = function setRange(_ref2) {
   }
 };
 
-var _default = (0, _recompose.compose)((0, _recompose.withState)("focusedInput", "updateFocusedInput", null), (0, _recompose.withHandlers)({
+export default compose(withState("focusedInput", "updateFocusedInput", null), withHandlers({
   updateRange: function updateRange(_ref3) {
     var updateStart = _ref3.updateStart,
         updateEnd = _ref3.updateEnd,
@@ -87,5 +72,3 @@ var _default = (0, _recompose.compose)((0, _recompose.withState)("focusedInput",
     };
   }
 }))(DatePicker);
-
-exports.default = _default;
