@@ -18,7 +18,12 @@ declare const MappingTools: {
         eTag: string;
         type: string;
     };
-    commitModification: any;
+    commitModification: ({ pks, errMsg, modalData, tableData }: {
+        pks: any;
+        errMsg: string;
+        modalData: any;
+        tableData: any;
+    }) => any;
     deleteItem: ({ data, row, pks }: {
         data: any;
         row: any;
