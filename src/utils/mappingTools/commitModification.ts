@@ -1,6 +1,6 @@
 import * as R from "ramda";
 import { Left, Right, concat } from "sanctuary";
-import { reader } from "./commitModsHelper";
+import { reader, sanctuaryConcat } from "./commitModsHelper";
 
 const checkPrimaryKey = ({ row, pks }: { row: any; pks: any }): any =>
   R.allPass(R.map(R.eqProps, pks))(row);
@@ -39,7 +39,7 @@ const onlyNonPrimaryAltered = (modalData: any, pks: any, errMsg: any) =>
 const addOrUpdate = (tableData: any, pks: any, errMsg: any): any => (
   modalData: any
 ) =>
-  R.concat(
+  sanctuaryConcat(
     excludesPrimaryKey(tableData, modalData, pks, errMsg),
     onlyNonPrimaryAltered(modalData, pks, errMsg)
   );

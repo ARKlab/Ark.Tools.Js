@@ -1,5 +1,4 @@
 import React from "react";
-import "./numericInput.scss";
 export declare type InputProps = {
     value: number | string;
     update: any;

@@ -2,7 +2,6 @@ import React from "react";
 import "react-dates/initialize";
 import { Moment } from "moment";
 import "react-dates/lib/css/_datepicker.css";
-import "./dateRange.scss";
 export declare type InputProps = {
     start: Moment | null;
     updateStart: any;

@@ -4,7 +4,6 @@ import { compose, withHandlers, withState } from "recompose";
 import moment, { Moment } from "moment";
 import { SingleDatePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
-import "./datePicker.scss";
 
 const DatePicker = ({
   value,

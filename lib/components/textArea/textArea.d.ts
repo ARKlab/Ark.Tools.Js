@@ -1,5 +1,4 @@
 /// <reference types="react" />
-import "./textArea.scss";
 export declare type InputProps = {
     update: any;
     value: string;

@@ -1,5 +1,4 @@
 /// <reference types="react" />
-import "./dropdown.scss";
 declare const Dropdown: ({ labelName, selectName, update, value, options, sortOptions, isMulti, customScrollBars, isDisabled, isSearchable, isClearable, closeMenuOnSelect, noOptionsMessage, placeholder }: {
     labelName?: string | undefined;
     selectName: string;

@@ -1,5 +1,4 @@
 /// <reference types="react" />
-import "./modal.scss";
 declare const ConfigModal: ({ open, id, title, modalClass, headerClass, bodyClass, footerClass, closeModal, modalBody, modalFooter }: {
     open: boolean;
     id?: string | undefined;

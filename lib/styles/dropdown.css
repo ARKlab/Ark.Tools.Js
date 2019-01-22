@@ -1,0 +1,28 @@
+.thumb-vertical,
+.thumb-horizontal {
+  background-color: black;
+  border-radius: 3px; }
+
+.arkSelect__menu-list {
+  overflow-y: unset !important;
+  max-height: 100% !important; }
+
+.arkSelectBody {
+  overflow-y: auto !important;
+  max-height: 210px; }
+
+.arkSelect__multi-value,
+.arkSelect__indicator,
+.arkSelect__option {
+  cursor: pointer !important; }
+
+.arkSelect__menu {
+  border-radius: 0 !important; }
+
+.arkSelect {
+  outline-color: transparent !important; }
+
+.arkSelect__control {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border-color: #cccccc !important; }

@@ -1,6 +1,5 @@
 import React from "react";
 import * as R from "ramda";
-import "./textArea.scss";
 
 const OnlyLabelName = ({ labelName }: { labelName?: string }) => (
   <label htmlFor="select">

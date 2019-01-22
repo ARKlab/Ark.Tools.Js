@@ -2,7 +2,6 @@ import React from "react";
 import Select, { components } from "react-select";
 import * as R from "ramda";
 import Scrollbars from "react-custom-scrollbars";
-import "./dropdown.scss";
 
 const sortByNameCaseInsensitive = R.sortBy(
   R.compose(

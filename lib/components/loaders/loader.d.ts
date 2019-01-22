@@ -1,5 +1,4 @@
 /// <reference types="react" />
-import "./loader.scss";
 declare const Loader: ({ load, id, loadIcon }: {
     load: boolean;
     id: string;

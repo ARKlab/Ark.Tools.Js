@@ -1,7 +1,6 @@
 import React from "react";
 import * as R from "ramda";
 import { compose, withHandlers } from "recompose";
-import "./numericInput.scss";
 
 const OnlyLabelName = ({ labelName }: { labelName?: string }) => (
   <label htmlFor="select">

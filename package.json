@@ -5,8 +5,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "main": "dist/index.js",
-  "module": "_esm/index.js",
+  "main": "lib/index.js",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "json2xls": "^0.1.2",
@@ -18,7 +17,7 @@
     "react-dom": "^16.7.0",
     "react-select": "^2.2.0",
     "recompose": "^0.30.0",
-    "sanctuary": "^0.15.0"
+    "sanctuary": "^0.14.1"
   },
   "scripts": {
     "type-check": "tsc --noEmit",
@@ -26,6 +25,7 @@
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx,.js\" --source-maps inline",
+    "build-css": "node-sass src/styles/ -o lib/styles/",
     "version": "npm run build && git add -f lib"
   },
   "devDependencies": {
