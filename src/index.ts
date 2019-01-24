@@ -14,6 +14,9 @@ import buildRequest from "./utils/mappingTools/buildRequest";
 import commitModification from "./utils/mappingTools/commitModification";
 import deleteItem from "./utils/mappingTools/deleteItem";
 import removeModification from "./utils/mappingTools/removeModification";
+import filterReducer from "./reducers/filterReducer";
+import tableFilterReducer from "./reducers/tableFilterReducer";
+import tableReducer from "./reducers/tableReducer";
 
 const MappingTools = {
   buildRequest,
@@ -27,10 +30,7 @@ const DiffTools = {
   diffExcelBuilder
 };
 
-export {
-  MappingTools,
-  DiffTools,
-  excelBuilder,
+const ArkComponets = {
   Loader,
   Modal,
   FilterModal,
@@ -41,3 +41,11 @@ export {
   NumericInput,
   TextInput
 };
+
+const ArkReducers = {
+  filterReducer,
+  tableFilterReducer,
+  tableReducer
+};
+
+export { MappingTools, DiffTools, ArkComponets, ArkReducers, excelBuilder };
