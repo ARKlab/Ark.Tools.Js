@@ -17,11 +17,14 @@ declare const MappingTools: {
         modalData: any;
         tableData: any;
     }) => any;
-    commitPeriodiModification: ({ pks, errMsg, modalData, tableData }: {
+    commitPeriodiModification: ({ pks, errMsg, modalData, tableData, periodo, periodoKeys, periodoErrorMsg }: {
         pks: any;
         errMsg: string;
         modalData: any;
         tableData: any;
+        periodo: any;
+        periodoKeys: any;
+        periodoErrorMsg: any;
     }) => any;
     deleteItem: ({ data, row, pks }: {
         data: any;
