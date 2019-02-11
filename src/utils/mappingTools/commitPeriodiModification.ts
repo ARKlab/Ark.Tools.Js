@@ -41,6 +41,7 @@ const periodiRangeOverlapChecker = ({
   periodoKeys: any;
   periodoErrorMsg: any;
 }) => {
+  debugger;
   const getSelectedRange = periodo
     .filter((row: any) => row.periodo === selectedPeriodo)
     .map((x: any) => moment().range(x.validoDal, x.validoAl));
@@ -206,22 +207,31 @@ const getModifiers = R.traverse<any, any, any>(reader.of, R.identity, [
   getAdder
 ]).map(R.apply(concat));
 
-export const commitChangesHelper = ({
+export const commitPeriodiModification = ({
   pks,
   errMsg,
   modalData,
-  tableData
+  tableData,
+  periodo,
+  periodoKeys,
+  periodoErrorMsg
 }: {
   pks: any;
   errMsg: string;
   modalData: any;
   tableData: any;
+  periodo: any;
+  periodoKeys: any;
+  periodoErrorMsg: any;
 }) =>
   getModifiers.run({
     pks,
     errMsg,
     modalData,
-    tableData
+    tableData,
+    periodo,
+    periodoKeys,
+    periodoErrorMsg
   });
 
-export default commitChangesHelper;
+export default commitPeriodiModification;
