@@ -1,4 +1,5 @@
 /// <reference types="react" />
+/// <reference types="moment" />
 import excelBuilder from "./utils/excelBuilder/excelBuilder";
 declare const MappingTools: {
     buildRequest: ({ data, eTag, type }: {
@@ -11,6 +12,12 @@ declare const MappingTools: {
         type: string;
     };
     commitModification: ({ pks, errMsg, modalData, tableData }: {
+        pks: any;
+        errMsg: string;
+        modalData: any;
+        tableData: any;
+    }) => any;
+    commitPeriodiModification: ({ pks, errMsg, modalData, tableData }: {
         pks: any;
         errMsg: string;
         modalData: any;

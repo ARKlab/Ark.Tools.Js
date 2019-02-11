@@ -12,6 +12,7 @@ import diffExcelBuilder from "./utils/diff/diffExcelBuilder";
 import excelBuilder from "./utils/excelBuilder/excelBuilder";
 import buildRequest from "./utils/mappingTools/buildRequest";
 import commitModification from "./utils/mappingTools/commitModification";
+import commitPeriodiModification from "./utils/mappingTools/commitPeriodiModification";
 import deleteItem from "./utils/mappingTools/deleteItem";
 import removeModification from "./utils/mappingTools/removeModification";
 import filterReducer from "./reducers/filterReducer";
@@ -21,6 +22,7 @@ import tableReducer from "./reducers/tableReducer";
 const MappingTools = {
   buildRequest,
   commitModification,
+  commitPeriodiModification,
   deleteItem,
   removeModification
 };
