@@ -41,7 +41,6 @@ const periodiRangeOverlapChecker = ({
   periodoKeys: any;
   periodoErrorMsg: any;
 }) => {
-  debugger;
   const getSelectedRange = periodo
     .filter((row: any) => row.periodo === selectedPeriodo)
     .map((x: any) => moment().range(x.validoDal, x.validoAl));
