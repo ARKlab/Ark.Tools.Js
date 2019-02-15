@@ -1,17 +1,21 @@
 declare const tableReducer: ({ key, filterState, filters, filterOrig }: {
     key: string;
     filterState?: boolean | undefined;
-    filters?: any[] | undefined;
+    filters?: {} | undefined;
     filterOrig?: any[] | undefined;
 }) => {
     tableOptionsReducer: (state: {
         filterState: boolean;
-        filters: any[];
+        filters: {};
         filterOrig: any[];
     } | undefined, action: any) => {
         filters: any;
         filterState: boolean;
         filterOrig: any[];
+    } | {
+        filterState: boolean;
+        filterOrig: {};
+        filters: {};
     };
     setFilters: ({ filters }: {
         filters: any;

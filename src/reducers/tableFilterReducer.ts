@@ -24,7 +24,7 @@ const tableReducer = ({
   columnFilters?: any[];
   tableCount?: number;
   filterState?: boolean;
-  filters?: any[];
+  filters?: {};
   filterOrig?: any[];
   dateRange?: { startDate: Moment | null; endDate: Moment | null } | null;
   datePicker?: Moment | null;

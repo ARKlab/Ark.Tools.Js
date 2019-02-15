@@ -109,17 +109,21 @@ declare const ArkReducers: {
     filterReducer: ({ key, filterState, filters, filterOrig }: {
         key: string;
         filterState?: boolean | undefined;
-        filters?: any[] | undefined;
+        filters?: {} | undefined;
         filterOrig?: any[] | undefined;
     }) => {
         tableOptionsReducer: (state: {
             filterState: boolean;
-            filters: any[];
+            filters: {};
             filterOrig: any[];
         } | undefined, action: any) => {
             filters: any;
             filterState: boolean;
             filterOrig: any[];
+        } | {
+            filterState: boolean;
+            filterOrig: {};
+            filters: {};
         };
         setFilters: ({ filters }: {
             filters: any;
@@ -153,7 +157,7 @@ declare const ArkReducers: {
         columnFilters?: any[] | undefined;
         tableCount?: number | undefined;
         filterState?: boolean | undefined;
-        filters?: any[] | undefined;
+        filters?: {} | undefined;
         filterOrig?: any[] | undefined;
         dateRange?: {
             startDate: import("moment").Moment | null;
@@ -170,7 +174,7 @@ declare const ArkReducers: {
             columnFilters: any[];
             tableCount: number;
             filterState: boolean;
-            filters: any[];
+            filters: {};
             filterOrig: any[];
             dateRange: {
                 startDate: import("moment").Moment | null;
@@ -186,7 +190,7 @@ declare const ArkReducers: {
             columnFilters: any[];
             tableCount: number;
             filterState: boolean;
-            filters: any[];
+            filters: {};
             filterOrig: any[];
             dateRange: {
                 startDate: import("moment").Moment | null;
@@ -202,7 +206,7 @@ declare const ArkReducers: {
             columnFilters: any[];
             tableCount: number;
             filterState: boolean;
-            filters: any[];
+            filters: {};
             filterOrig: any[];
             dateRange: {
                 startDate: import("moment").Moment | null;
@@ -218,7 +222,7 @@ declare const ArkReducers: {
             sortColumn: string | null;
             tableCount: number;
             filterState: boolean;
-            filters: any[];
+            filters: {};
             filterOrig: any[];
             dateRange: {
                 startDate: import("moment").Moment | null;
@@ -234,7 +238,7 @@ declare const ArkReducers: {
             sortColumn: string | null;
             columnFilters: any[];
             filterState: boolean;
-            filters: any[];
+            filters: {};
             filterOrig: any[];
             dateRange: {
                 startDate: import("moment").Moment | null;
@@ -258,6 +262,22 @@ declare const ArkReducers: {
             } | null;
             datePicker: import("moment").Moment | null;
         } | {
+            filterState: boolean;
+            filterOrig: {};
+            data: any;
+            pageSize: number;
+            pageSizeList: any[];
+            pageNo: number;
+            sortColumn: string | null;
+            columnFilters: any[];
+            tableCount: number;
+            filters: {};
+            dateRange: {
+                startDate: import("moment").Moment | null;
+                endDate: import("moment").Moment | null;
+            } | null;
+            datePicker: import("moment").Moment | null;
+        } | {
             pageNo: number;
             dateRange: {
                 startDate: any;
@@ -270,7 +290,7 @@ declare const ArkReducers: {
             columnFilters: any[];
             tableCount: number;
             filterState: boolean;
-            filters: any[];
+            filters: {};
             filterOrig: any[];
             datePicker: import("moment").Moment | null;
         } | {
@@ -283,7 +303,7 @@ declare const ArkReducers: {
             columnFilters: any[];
             tableCount: number;
             filterState: boolean;
-            filters: any[];
+            filters: {};
             filterOrig: any[];
             dateRange: {
                 startDate: import("moment").Moment | null;
@@ -477,4 +497,10 @@ declare const ArkReducers: {
         };
     };
 };
-export { MappingTools, DiffTools, ArkComponets, ArkReducers, excelBuilder };
+declare const Request: {
+    queryBuilder: ({ filters, columnFilterName }: {
+        filters: any;
+        columnFilterName?: string | undefined;
+    }) => string;
+};
+export { MappingTools, DiffTools, ArkComponets, ArkReducers, excelBuilder, Request };

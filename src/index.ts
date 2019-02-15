@@ -18,6 +18,7 @@ import removeModification from "./utils/mappingTools/removeModification";
 import filterReducer from "./reducers/filterReducer";
 import tableFilterReducer from "./reducers/tableFilterReducer";
 import tableReducer from "./reducers/tableReducer";
+import queryBuilder from "./utils/request/queryBuilder";
 
 const MappingTools = {
   buildRequest,
@@ -50,4 +51,15 @@ const ArkReducers = {
   tableReducer
 };
 
-export { MappingTools, DiffTools, ArkComponets, ArkReducers, excelBuilder };
+const Request = {
+  queryBuilder
+};
+
+export {
+  MappingTools,
+  DiffTools,
+  ArkComponets,
+  ArkReducers,
+  excelBuilder,
+  Request
+};

@@ -9,7 +9,7 @@ declare const tableReducer: ({ key, data, pageSize, pageSizeList, pageNo, sortCo
     columnFilters?: any[] | undefined;
     tableCount?: number | undefined;
     filterState?: boolean | undefined;
-    filters?: any[] | undefined;
+    filters?: {} | undefined;
     filterOrig?: any[] | undefined;
     dateRange?: {
         startDate: Moment | null;
@@ -26,7 +26,7 @@ declare const tableReducer: ({ key, data, pageSize, pageSizeList, pageNo, sortCo
         columnFilters: any[];
         tableCount: number;
         filterState: boolean;
-        filters: any[];
+        filters: {};
         filterOrig: any[];
         dateRange: {
             startDate: Moment | null;
@@ -42,7 +42,7 @@ declare const tableReducer: ({ key, data, pageSize, pageSizeList, pageNo, sortCo
         columnFilters: any[];
         tableCount: number;
         filterState: boolean;
-        filters: any[];
+        filters: {};
         filterOrig: any[];
         dateRange: {
             startDate: Moment | null;
@@ -58,7 +58,7 @@ declare const tableReducer: ({ key, data, pageSize, pageSizeList, pageNo, sortCo
         columnFilters: any[];
         tableCount: number;
         filterState: boolean;
-        filters: any[];
+        filters: {};
         filterOrig: any[];
         dateRange: {
             startDate: Moment | null;
@@ -74,7 +74,7 @@ declare const tableReducer: ({ key, data, pageSize, pageSizeList, pageNo, sortCo
         sortColumn: string | null;
         tableCount: number;
         filterState: boolean;
-        filters: any[];
+        filters: {};
         filterOrig: any[];
         dateRange: {
             startDate: Moment | null;
@@ -90,7 +90,7 @@ declare const tableReducer: ({ key, data, pageSize, pageSizeList, pageNo, sortCo
         sortColumn: string | null;
         columnFilters: any[];
         filterState: boolean;
-        filters: any[];
+        filters: {};
         filterOrig: any[];
         dateRange: {
             startDate: Moment | null;
@@ -114,6 +114,22 @@ declare const tableReducer: ({ key, data, pageSize, pageSizeList, pageNo, sortCo
         } | null;
         datePicker: Moment | null;
     } | {
+        filterState: boolean;
+        filterOrig: {};
+        data: any;
+        pageSize: number;
+        pageSizeList: any[];
+        pageNo: number;
+        sortColumn: string | null;
+        columnFilters: any[];
+        tableCount: number;
+        filters: {};
+        dateRange: {
+            startDate: Moment | null;
+            endDate: Moment | null;
+        } | null;
+        datePicker: Moment | null;
+    } | {
         pageNo: number;
         dateRange: {
             startDate: any;
@@ -126,7 +142,7 @@ declare const tableReducer: ({ key, data, pageSize, pageSizeList, pageNo, sortCo
         columnFilters: any[];
         tableCount: number;
         filterState: boolean;
-        filters: any[];
+        filters: {};
         filterOrig: any[];
         datePicker: Moment | null;
     } | {
@@ -139,7 +155,7 @@ declare const tableReducer: ({ key, data, pageSize, pageSizeList, pageNo, sortCo
         columnFilters: any[];
         tableCount: number;
         filterState: boolean;
-        filters: any[];
+        filters: {};
         filterOrig: any[];
         dateRange: {
             startDate: Moment | null;

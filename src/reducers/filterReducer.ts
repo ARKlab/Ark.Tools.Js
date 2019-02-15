@@ -6,7 +6,7 @@ const tableReducer = ({
 }: {
   key: string;
   filterState?: boolean;
-  filters?: any[];
+  filters?: {};
   filterOrig?: any[];
 }) => {
   const SET_FILTERS = `${key}/SET_FILTERS`;
