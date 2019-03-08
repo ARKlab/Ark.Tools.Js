@@ -16,7 +16,7 @@ const RequiredLabelName = ({
 }) => (
   <label htmlFor="select">
     <div className="requiredLabel">
-      <div>{labelName}</div>
+      <b>{labelName}</b>
       <div className="required">{requiredFieldText}</div>
     </div>
   </label>
@@ -51,7 +51,7 @@ const NumericInput = ({
   requiredFieldText,
   placeholder = ""
 }: OutputProps) => (
-  <div>
+  <>
     {!R.isEmpty(labelName) && R.isEmpty(requiredFieldText) ? (
       <OnlyLabelName labelName={labelName} />
     ) : null}
@@ -74,7 +74,7 @@ const NumericInput = ({
       disabled={disabled}
       onChange={change}
     />
-  </div>
+  </>
 );
 
 export default compose<OutputProps, InputProps>(

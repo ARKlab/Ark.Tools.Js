@@ -83,11 +83,11 @@ declare const ArkComponets: {
         filter: any;
         disableFilter?: any;
     }) => JSX.Element;
-    Dropdown: ({ labelName, selectName, update, value, options, sortOptions, isMulti, customScrollBars, isDisabled, isSearchable, isClearable, closeMenuOnSelect, noOptionsMessage, placeholder }: {
+    Dropdown: ({ labelName, selectName, change, value, options, sortOptions, isMulti, customScrollBars, isDisabled, isSearchable, isClearable, closeMenuOnSelect, noOptionsMessage, requiredFieldText, placeholder }: {
         labelName?: string | undefined;
         selectName: string;
         value: any[];
-        update: any;
+        change: any;
         options: any[];
         sortOptions?: boolean | undefined;
         isMulti?: boolean | undefined;
@@ -96,6 +96,7 @@ declare const ArkComponets: {
         isSearchable?: boolean | undefined;
         isClearable?: boolean | undefined;
         closeMenuOnSelect?: boolean | undefined;
+        requiredFieldText?: string | undefined;
         noOptionsMessage?: string | undefined;
         placeholder?: string | undefined;
     }) => JSX.Element;

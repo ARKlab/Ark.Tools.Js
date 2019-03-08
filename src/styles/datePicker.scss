@@ -5,3 +5,12 @@
     background: transparent !important;
   }
 }
+
+.requiredLabel {
+  display: flex;
+  font-weight: bold;
+  .required {
+    padding-left: 5px;
+    color: #d9534f;
+  }
+}

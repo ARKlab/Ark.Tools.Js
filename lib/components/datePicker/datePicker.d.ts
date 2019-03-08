@@ -3,8 +3,10 @@ import "react-dates/initialize";
 import { Moment } from "moment";
 import "react-dates/lib/css/_datepicker.css";
 export declare type InputProps = {
+    labelName?: string;
+    requiredFieldText?: string;
     value: Moment | null;
-    setDate: any;
+    update: any;
     format: string;
     placeHolder?: string;
     numberOfMonths?: number;

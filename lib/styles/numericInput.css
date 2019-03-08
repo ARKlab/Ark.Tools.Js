@@ -7,7 +7,7 @@
 
 .arkNumberInput {
   border-radius: 0;
-  min-height: 40px; }
+  height: 33px; }
   .arkNumberInput:focus {
     box-shadow: none;
     border-color: #ced4da; }

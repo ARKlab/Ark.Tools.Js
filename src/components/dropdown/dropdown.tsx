@@ -10,6 +10,27 @@ const sortByNameCaseInsensitive = R.sortBy(
   )
 );
 
+const OnlyLabelName = ({ labelName }: { labelName?: string }) => (
+  <label htmlFor="select">
+    <b>{labelName}</b>
+  </label>
+);
+
+const RequiredLabelName = ({
+  labelName,
+  requiredFieldText
+}: {
+  labelName?: string;
+  requiredFieldText?: string;
+}) => (
+  <label htmlFor="select">
+    <div className="requiredLabel">
+      <b>{labelName}</b>
+      <div className="required">{requiredFieldText}</div>
+    </div>
+  </label>
+);
+
 const sortOptionsFunc = ({
   options,
   sortOptions
@@ -48,7 +69,7 @@ const Menu = (props: any) => {
 const Dropdown = ({
   labelName,
   selectName,
-  update,
+  change,
   value,
   options,
   sortOptions = false,
@@ -57,14 +78,15 @@ const Dropdown = ({
   isDisabled = false,
   isSearchable = false,
   isClearable = false,
-  closeMenuOnSelect = false,
+  closeMenuOnSelect = true,
   noOptionsMessage = "No Options",
+  requiredFieldText,
   placeholder = "Select..."
 }: {
   labelName?: string;
   selectName: string;
   value: any[];
-  update: any;
+  change: any;
   options: any[];
   sortOptions?: boolean;
   isMulti?: boolean;
@@ -73,14 +95,19 @@ const Dropdown = ({
   isSearchable?: boolean;
   isClearable?: boolean;
   closeMenuOnSelect?: boolean;
+  requiredFieldText?: string;
   noOptionsMessage?: string;
   placeholder?: string;
 }) => (
   <>
-    {labelName ? (
-      <label htmlFor="select">
-        <b>{labelName}</b>
-      </label>
+    {!R.isEmpty(labelName) && R.isEmpty(requiredFieldText) ? (
+      <OnlyLabelName labelName={labelName} />
+    ) : null}
+    {!R.isEmpty(labelName) && !R.isEmpty(requiredFieldText) ? (
+      <RequiredLabelName
+        labelName={labelName}
+        requiredFieldText={requiredFieldText}
+      />
     ) : null}
     <Select
       isMulti={isMulti}
@@ -88,7 +115,7 @@ const Dropdown = ({
       classNamePrefix="arkSelect"
       name={selectName}
       value={value}
-      onChange={update}
+      onChange={change}
       options={sortOptionsFunc({ options, sortOptions })}
       isDisabled={isDisabled}
       isSearchable={isSearchable}

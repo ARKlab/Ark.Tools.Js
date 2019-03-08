@@ -49,13 +49,6 @@ const simpleDataBuilder = ({ key, data }: { key: string; data: any }) => {
     default:
       return "";
   }
-  return R.pipe(
-    R.map(
-      ({ value }: { value: string }) => `${key}=${encodeURIComponent(value)}`
-    ),
-    R.values,
-    R.join("&")
-  )(data);
 };
 const arrDataBuilder = ({
   key,
@@ -103,6 +96,7 @@ const queryStringBuilder = ({
     R.filter((x: any) => x),
     R.keys,
     R.map((key: any) => builder({ key, data: filters, columnFilterName })),
+    R.filter((x: any) => x),
     R.join("&")
   )(filters);
 

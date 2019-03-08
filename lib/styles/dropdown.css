@@ -1,3 +1,10 @@
+.requiredLabel {
+  display: flex;
+  font-weight: bold; }
+  .requiredLabel .required {
+    padding-left: 5px;
+    color: #d9534f; }
+
 .thumb-vertical,
 .thumb-horizontal {
   background-color: black;
@@ -25,4 +32,15 @@
 .arkSelect__control {
   box-shadow: none !important;
   border-radius: 0 !important;
-  border-color: #cccccc !important; }
+  border-color: #cccccc !important;
+  min-height: 28px !important; }
+
+.arkSelect__value-container {
+  height: 33px !important; }
+
+.arkSelect__indicators {
+  height: 33px !important; }
+
+.arkSelect__option {
+  height: 33px !important;
+  padding: 6px 12px !important; }

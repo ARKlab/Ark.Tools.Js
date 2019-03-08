@@ -15,7 +15,7 @@ const RequiredLabelName = ({
 }) => (
   <label htmlFor="select">
     <div className="requiredLabel">
-      <div>{labelName}</div>
+      <b>{labelName}</b>
       <div className="required">{requiredFieldText}</div>
     </div>
   </label>
